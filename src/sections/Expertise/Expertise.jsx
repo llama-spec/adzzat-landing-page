@@ -20,7 +20,6 @@ const expertiseData = [
     { id: 7, icon: <SearchCode size={28} />, title: "Text-To-SQL", desc: "Converting natural language queries into accurate database commands." },
     { id: 8, icon: <Sparkles size={28} />, title: "RAG Training & Eval", desc: "Optimizing retrieval-augmented generation for knowledge-intensive tasks." },
     { id: 9, icon: <LineChart size={28} />, title: "Model Evaluation", desc: "Rigorous testing and benchmarking to ensure model performance and reliability." },
-    { id: 10, icon: <Languages size={28} />, title: "Indic Language Work", desc: "Specialized expertise in Indian languages for inclusive AI solutions." }
 ];
 
 const Expertise = () => {
@@ -52,7 +51,7 @@ const Expertise = () => {
 
                 <div className="expertise-grid">
                     {expertiseData.map(item => (
-                        <div key={item.id} className="expertise-card">
+                        <div key={item.id} className="expertise-card hover-glow">
                             <div className="expertise-icon">
                                 {item.icon}
                             </div>

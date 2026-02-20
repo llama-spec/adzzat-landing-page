@@ -65,12 +65,6 @@ const Footer = () => {
                             <a href="https://www.instagram.com/adzzat?igsh=MWU1d3A0NjE4NjYxOA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
                                 <Instagram size={20} />
                             </a>
-                            <a href="#" className="social-link" aria-label="X / Twitter">
-                                <Twitter size={20} />
-                            </a>
-                            <a href="#" className="social-link" aria-label="GitHub">
-                                <Github size={20} />
-                            </a>
                         </div>
                     </div>
 

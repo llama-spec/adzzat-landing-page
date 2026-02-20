@@ -1,15 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import { Mail, MessageCircle, MapPin } from 'lucide-react';
+import { useTextReveal } from '../hooks/useTextReveal';
 import './Contact.css';
 
 const Contact = () => {
-    // Scroll to top when page changes
+    const mainRef = useRef(null);
+    useTextReveal();
+
+    // Scroll to top and animate when page changes
     useEffect(() => {
         window.scrollTo(0, 0);
+        gsap.fromTo(mainRef.current,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
+        );
     }, []);
 
     return (
-        <main className="contact-page">
+        <main ref={mainRef} className="contact-page">
             <section className="contact-hero section-wrapper">
                 <div className="container">
                     <h1 className="contact-title">Let's build your data advantage together.</h1>
@@ -22,7 +31,7 @@ const Contact = () => {
 
                     {/* Left Column: Form */}
                     <div className="contact-form-col">
-                        <div className="form-card">
+                        <div className="form-card hover-glow-strong">
                             <h2 style={{
                                 color: 'white'
                             }}>Contact Sales</h2>

@@ -1,17 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import gsap from 'gsap';
 import { Shield, Lightbulb, Users, CheckCircle, Target, Rocket, Globe, ArrowRight, Linkedin, Mail } from 'lucide-react';
+import { useTextReveal } from '../hooks/useTextReveal';
 import './About.css';
 
 const About = () => {
     const navigate = useNavigate();
-    // Scroll to top when page changes
+    const mainRef = useRef(null);
+    useTextReveal();
+
+    // Scroll to top and animate when page changes
     useEffect(() => {
         window.scrollTo(0, 0);
+        gsap.fromTo(mainRef.current,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
+        );
     }, []);
 
     return (
-        <main className="about-page">
+        <main ref={mainRef} className="about-page">
             <section className="about-hero section-wrapper">
                 <div className="container">
                     <h1 className="about-title">Empowering AI with Exceptional Data</h1>
@@ -47,12 +56,12 @@ const About = () => {
                 <div className="container">
                     <h2 className="section-title">Our Core Values</h2>
                     <div className="values-grid">
-                        <div className="value-card">
+                        <div className="value-card hover-glow-strong">
                             <Shield className="value-icon" />
                             <h3>Uncompromising Quality</h3>
                             <p>We believe that model performance is strictly bound by data quality. We accept no shortcuts in our annotation pipelines.</p>
                         </div>
-                        <div className="value-card">
+                        <div className="value-card hover-glow-strong">
                             <Lightbulb className="value-icon" />
                             <h3>Radical Innovation</h3>
                             <p>Continuous refinement of our internal tooling allows us to tackle the most complex multi-modal data challenges.</p>
@@ -77,19 +86,19 @@ const About = () => {
                     <p className="timeline-subtitle">How we deliver on our promise of pristine data.</p>
 
                     <div className="timeline-grid">
-                        <div className="timeline-step">
+                        <div className="timeline-step hover-glow-strong">
                             <div className="step-number">01</div>
                             <Target className="step-icon" />
                             <h3>Expert Curation</h3>
                             <p>We recruit top 1% academic and industry professionals globally, verifying credentials before any annotation begins.</p>
                         </div>
-                        <div className="timeline-step">
+                        <div className="timeline-step hover-glow-strong">
                             <div className="step-number">02</div>
                             <Rocket className="step-icon" />
                             <h3>Platform Velocity</h3>
                             <p>Our proprietary platform minimizes friction, allowing experts to focus entirely on cognitive evaluation rather than UI hurdles.</p>
                         </div>
-                        <div className="timeline-step">
+                        <div className="timeline-step hover-glow-strong">
                             <div className="step-number">03</div>
                             <Globe className="step-icon" />
                             <h3>Multi-Layer Verification</h3>
@@ -105,7 +114,7 @@ const About = () => {
                     <p className="team-subtitle">Led by industry veterans from top AI research labs and global enterprises.</p>
 
                     <div className="team-grid">
-                        <div className="team-member">
+                        <div className="team-member hover-glow-strong">
                             <div className="member-avatar">
                                 <img src="/aryan.jpeg" alt="Aryan Honawar" className="member-img" />
                             </div>
@@ -117,7 +126,7 @@ const About = () => {
                                 <a href="mailto:aryan@adzzat.com"><Mail size={20} /></a>
                             </div>
                         </div>
-                        <div className="team-member">
+                        <div className="team-member hover-glow-strong">
                             <div className="member-avatar">
                                 <img src="/Nabeel.jpeg" alt="Nabeel Nensey" className="member-img" />
                             </div>
@@ -129,7 +138,7 @@ const About = () => {
                                 <a href="mailto:nabeel@adzzat.com"><Mail size={20} /></a>
                             </div>
                         </div>
-                        <div className="team-member">
+                        <div className="team-member hover-glow-strong">
                             <div className="member-avatar">
                                 <img src="/niket.jpeg" alt="Niket Singh" className="member-img" />
                             </div>

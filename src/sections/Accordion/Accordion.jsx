@@ -128,7 +128,7 @@ const Accordion = () => {
 
                     {/* Right: State-Reactive Visualizer */}
                     <div className="accordion-graphic-container">
-                        <div className="model-visualizer">
+                        <div className="model-visualizer float-anim">
                             <div className="model-visualizer-bg"></div>
                             <div className="model-visualizer-content" key={activeItem}>
                                 <div className="visualizer-icon-wrapper">
