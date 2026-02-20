@@ -1,0 +1,233 @@
+.genai-section {
+    background-color: #191919;
+    color: white;
+    padding: 8rem 0;
+}
+
+.genai-header {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.genai-title {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.genai-subtitle {
+    color: #94a3b8;
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.genai-chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-chip {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    cursor: default;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.feature-chip:hover {
+    border-color: var(--color-accent-indigo);
+    background-color: rgba(79, 70, 229, 0.15);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.2);
+}
+
+.genai-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .genai-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Left: Visual Window (Mac style like Deccan often utilizes) */
+.genai-visual-container {
+    perspective: 1000px;
+}
+
+.genai-visual-window {
+    background-color: #0f172a;
+    /* Darker slate */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-2xl), 0 0 40px rgba(79, 70, 229, 0.1);
+    transform: rotateY(5deg) rotateX(2deg);
+    /* Slight 3D tilt */
+    transition: transform 0.3s ease;
+}
+
+.genai-visual-window:hover {
+    transform: rotateY(0deg) rotateX(0deg);
+}
+
+.window-header {
+    background-color: #1e293b;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red {
+    background-color: #ef4444;
+}
+
+.dot-yellow {
+    background-color: #f59e0b;
+}
+
+.dot-green {
+    background-color: #10b981;
+}
+
+.window-title {
+    margin-left: 1rem;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-family: monospace;
+}
+
+.window-body {
+    padding: 2rem;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.code-block {
+    margin: 0;
+    color: #38bdf8;
+    /* Light blue code color */
+    animation: typeIn 0.5s ease-out forwards;
+}
+
+.window-body .code-block code {
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.blinking-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2em;
+    background-color: #fff;
+    vertical-align: middle;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes typeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Right: Tabs List */
+.genai-tabs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.genai-tab-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    /* Inactive state */
+}
+
+.genai-tab-item.active {
+    opacity: 1;
+    background-color: rgba(79, 70, 229, 0.1);
+    border-color: var(--color-accent-indigo);
+}
+
+.genai-tab-item:hover:not(.active) {
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.tab-icon-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--color-accent-indigo);
+    padding-top: 0.25rem;
+}
+
+.tab-title {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.tab-desc {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}

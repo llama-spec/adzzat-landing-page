@@ -1,0 +1,125 @@
+.testimonial-section {
+    background-color: var(--color-bg);
+    position: relative;
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+/* Subtle indigo gradient background matching Deccan's soft glow */
+.testimonial-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: radial-gradient(ellipse at center, var(--color-accent-indigo-light) 0%, transparent 70%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.testimonial-content {
+    max-width: 900px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quote-icon {
+    font-size: 6rem;
+    color: var(--color-accent-indigo);
+    line-height: 1;
+    font-family: serif;
+    margin-bottom: -1rem;
+    opacity: 0.2;
+}
+
+.testimonial-quote {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 500;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--color-text-primary);
+}
+
+.author-title {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+/* Video Placeholder Styles */
+.testimonial-video-container {
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(145deg, var(--color-accent-indigo), var(--color-accent-midnight));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-video-container:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-glass);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent-indigo);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.testimonial-video-container:hover .play-button {
+    transform: scale(1.1);
+    background-color: white;
+}
+
+.video-caption {
+    position: absolute;
+    bottom: 1.5rem;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.8;
+}

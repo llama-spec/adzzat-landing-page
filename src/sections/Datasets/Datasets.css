@@ -1,0 +1,129 @@
+.dataset-section {
+    background-color: var(--color-bg);
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.dataset-header {
+    text-align: left;
+    margin-bottom: 4rem;
+}
+
+.dataset-title {
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.dataset-subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+.dataset-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--color-accent-indigo);
+    font-size: 1.125rem;
+}
+
+.dataset-view-all:hover {
+    color: var(--color-accent-midnight);
+}
+
+/* Horizontal Scrolling Container */
+.dataset-slider-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: max(3rem, calc((100vw - var(--max-width)) / 2 + 3rem));
+    padding-bottom: 2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.dataset-slider-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.dataset-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    padding-right: 3rem;
+    /* Padding at the end of the scroll */
+}
+
+/* Dataset Card */
+.dataset-card {
+    width: 380px;
+    background-color: #F8F9FA;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dataset-card:hover {
+    background-color: white;
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(79, 70, 229, 0.4);
+    transform: translateY(-5px);
+}
+
+.dataset-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.dataset-type {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent-indigo);
+    background-color: rgba(79, 70, 229, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+}
+
+.dataset-download-icon {
+    color: var(--color-text-light);
+    transition: color 0.2s;
+}
+
+.dataset-card:hover .dataset-download-icon {
+    color: var(--color-accent-indigo);
+}
+
+.dataset-card-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dataset-card-title {
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.dataset-card-items {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}

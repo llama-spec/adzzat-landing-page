@@ -1,0 +1,210 @@
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--nav-height);
+    /* account for navbar */
+    /* Remove center alignment */
+    
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+  
+}
+
+@media (min-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1.2fr 0.8fr;
+        /* Left side is slightly wider in Deccan */
+    }
+}
+
+/* Left Column Styling */
+.hero-content-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Deccan is strictly left-aligned */
+}
+
+/* Badge resembling Deccan's "announces fundraising" pill */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hero-badge:hover {
+    background-color: var(--color-grid);
+}
+
+.badge-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-accent-indigo);
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+.badge-arrow {
+    margin-left: 0.5rem;
+    color: var(--color-text-light);
+}
+
+/* Massive Left-Aligned Title */
+.hero-title {
+    margin-bottom: 3rem;
+    color: var(--color-text-primary);
+    max-width: 800px;
+}
+
+.hero-title-line {
+    line-height: 1.15;
+}
+
+.hero-cta {
+    margin-bottom: 5rem;
+}
+
+/* Trusted Logos Section */
+.hero-trusted {
+    border-top: 1px solid var(--color-border);
+    padding-top: 2rem;
+    width: 100%;
+}
+
+.trusted-text {
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.trusted-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.logo-placeholder {
+    font-size: 1.125rem;
+    color: var(--color-text-primary);
+    opacity: 0.8;
+}
+
+/* Right Column Abstract Graphic (Mimics Deccan topographic lines) */
+.hero-content-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    perspective: 1000px;
+}
+
+.abstract-graphic {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* CSS Topographic Layers */
+.abstract-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(60deg) rotateZ(-45deg);
+    border: 1.5px solid var(--color-accent-indigo-light);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    background: linear-gradient(135deg, transparent 50%, rgba(79, 70, 229, 0.03) 100%);
+    transition: all 0.5s ease;
+}
+
+.layer-1 {
+    width: 400px;
+    height: 300px;
+    animation: breathe 8s ease-in-out infinite alternate;
+}
+
+.layer-2 {
+    width: 320px;
+    height: 240px;
+    transform: translate(-50%, -60%) rotateX(60deg) rotateZ(-45deg);
+    border-color: rgba(79, 70, 229, 0.2);
+    animation: breathe 9s ease-in-out infinite alternate-reverse;
+}
+
+.layer-3 {
+    width: 240px;
+    height: 180px;
+    transform: translate(-50%, -70%) rotateX(60deg) rotateZ(-45deg);
+    border-color: rgba(79, 70, 229, 0.4);
+    animation: breathe 7s ease-in-out infinite alternate;
+}
+
+.layer-4 {
+    width: 140px;
+    height: 100px;
+    transform: translate(-50%, -80%) rotateX(60deg) rotateZ(-45deg);
+    border-color: var(--color-accent-indigo);
+    background: rgba(79, 70, 229, 0.1);
+}
+
+/* Dropped pins from Deccan graphic */
+.abstract-pin {
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--color-accent-indigo), transparent);
+    top: 30%;
+    left: 45%;
+}
+
+.abstract-pin::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -3px;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent-indigo);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--color-accent-indigo);
+}
+
+.pin-2 {
+    top: 60%;
+    left: 30%;
+    height: 60px;
+}
+
+.pin-3 {
+    top: 50%;
+    left: 70%;
+    height: 100px;
+}
+
+@keyframes breathe {
+    0% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}

@@ -1,0 +1,199 @@
+.schema-section {
+    background-color: #040315;
+    /* A slightly lighter navy to contrast with other dark sections */
+    color: white;
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.schema-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.schema-title {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.schema-subtitle {
+    color: #94a3b8;
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Diagram Layout */
+.schema-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Left Column */
+.schema-features-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+    z-index: 2;
+}
+
+.schema-feature-box {
+    background-color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.schema-feature-box:hover {
+    transform: translateX(10px);
+    border-color: var(--color-accent-indigo);
+    background-color: #233148;
+}
+
+.feature-icon {
+    color: #38bdf8;
+    /* Light blue accent */
+    min-width: 32px;
+}
+
+.feature-text h3 {
+    color: white;
+    font-size: 1.125rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.feature-text p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Middle Connectors */
+.schema-connectors-col {
+    flex: 0.5;
+    height: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+.schema-connectors-col svg {
+    display: block;
+}
+
+.schema-connector {
+    /* Animates dashed line flowing */
+    animation: dashLoop 20s linear infinite;
+}
+
+@keyframes dashLoop {
+    to {
+        stroke-dashoffset: -1000;
+    }
+}
+
+/* Right Column */
+.schema-platform-col {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 2;
+    perspective: 1000px;
+}
+
+.schema-core {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border: 2px solid var(--color-accent-indigo);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 280px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.core-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.4) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+    animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+.core-icon {
+    color: white;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.core-title {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.core-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.core-tags span {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive adjustment */
+@media (max-width: 1024px) {
+    .schema-diagram {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .schema-connectors-col {
+        display: none;
+    }
+
+    .schema-platform-col {
+        justify-content: center;
+    }
+}

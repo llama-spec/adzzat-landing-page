@@ -1,0 +1,120 @@
+/** Navbar to mirror Deccan top bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    z-index: 100;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+}
+
+.navbar.glass {
+    background: var(--color-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    /* Spacing between logo and links like Deccan */
+}
+
+/* Logo */
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    /* Increased font size for brand name */
+    font-weight: 700;
+}
+
+.brand-logo {
+    height: 48px;
+    /* Increased logo height */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Links */
+.nav-links {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    /* Lighter gray for links */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--color-text-primary);
+}
+
+/* Right side actions */
+.nav-actions {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+.mobile-toggle {
+    display: block;
+    color: var(--color-text-primary);
+}
+
+@media (min-width: 1024px) {
+    .mobile-toggle {
+        display: none;
+    }
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-link {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}

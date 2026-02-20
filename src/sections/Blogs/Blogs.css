@@ -1,0 +1,121 @@
+.blogs-section {
+    background-color: var(--color-bg);
+    padding: 8rem 0;
+}
+
+.blogs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+}
+
+.blogs-title {
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.blogs-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: var(--color-accent-indigo);
+}
+
+.blogs-view-all:hover {
+    color: var(--color-accent-midnight);
+}
+
+.blogs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .blogs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .blogs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background-color: var(--color-bg);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 320px;
+}
+
+.blog-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-6px);
+    border-color: rgba(79, 70, 229, 0.4);
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.blog-tag {
+    font-weight: 600;
+    color: var(--color-accent-indigo);
+    background-color: rgba(79, 70, 229, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.blog-date {
+    color: var(--color-text-light);
+}
+
+.blog-card-title {
+    font-size: 1.35rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.blog-card-desc {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    /* Pushes the "Read article" to the bottom */
+}
+
+.blog-read-more {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-accent-indigo);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s;
+}
+
+.blog-card:hover .read-more-arrow {
+    transform: translateX(5px);
+    /* Arrow slides right on hover */
+}
+
+.read-more-arrow {
+    transition: transform 0.2s ease;
+}

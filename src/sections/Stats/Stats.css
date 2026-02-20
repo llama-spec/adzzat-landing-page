@@ -1,0 +1,133 @@
+.stats-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* For floating pills */
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-header {
+    margin-bottom: 6rem;
+    max-width: 900px;
+}
+
+.stats-title-huge {
+    margin-bottom: 2rem;
+    color: var(--color-text-primary);
+}
+
+.stats-subtitle {
+    color: var(--color-text-secondary);
+    font-size: clamp(1.125rem, 1.5vw, 1.35rem);
+    line-height: 1.6;
+}
+
+.stats-bottom {
+    display: flex;
+    justify-content: space-between;
+    /* Stats on left, tags on right */
+    align-items: flex-start;
+    position: relative;
+}
+
+.stats-row {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 400;
+    /* Deccan uses light weight for huge stats */
+    color: var(--color-text-primary);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}
+
+.stat-divider {
+    width: 2px;
+    height: 80px;
+    background-color: var(--color-accent-indigo);
+}
+
+/* Floating Pills (Mimicking Deccan's right side tags) */
+.floating-pills-container {
+    position: absolute;
+    right: 0;
+    top: -150px;
+    width: 400px;
+    height: 500px;
+    pointer-events: none;
+}
+
+.floating-pill {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    /* Slightly rounded, not full pill */
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    box-shadow: var(--shadow-sm);
+}
+
+.pill-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: var(--color-grid);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.pill-pos-1 {
+    top: 10%;
+    right: 20%;
+}
+
+.pill-pos-2 {
+    top: 40%;
+    right: 40%;
+}
+
+.pill-pos-3 {
+    top: 60%;
+    right: 10%;
+}
+
+.pill-pos-4 {
+    top: 85%;
+    right: 30%;
+}
+
+@media (max-width: 1024px) {
+    .floating-pills-container {
+        display: none;
+    }
+}
