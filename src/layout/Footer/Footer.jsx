@@ -37,7 +37,7 @@ const Footer = () => {
                             <Link to="/contact" className="btn btn-primary btn-large" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
                                 Request Enterprise Access <ArrowUpRight size={18} />
                             </Link>
-                            <Link to="/contact" className="btn btn-secondary btn-large" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+                            <Link to="/contact" className="btn btn-secondary btn-large" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', color: 'white' }}>
                                 Schedule Strategic Call
                             </Link>
                         </div>
