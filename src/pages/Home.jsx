@@ -9,6 +9,7 @@ import FlowDiagram from '../sections/FlowDiagram';
 import PlatformSchema from '../sections/PlatformSchema';
 import Pillars from '../sections/Pillars';
 import Certifications from '../sections/Certifications';
+import Testimonial from '../sections/Testimonial';
 import Blogs from '../sections/Blogs';
 import { useTextReveal } from '../hooks/useTextReveal';
 
@@ -34,6 +35,7 @@ const Home = () => {
             <PlatformSchema />
             <Pillars />
             <Certifications />
+            <Testimonial />
             <Blogs />
         </main>
     );

@@ -40,14 +40,14 @@ const Testimonial = () => {
                 </div>
 
                 {/* Video Placeholder requested in copyright.md */}
-                <div className="testimonial-video-container">
+                {/* <div className="testimonial-video-container">
                     <div className="video-placeholder">
                         <div className="play-button">
                             <Play size={32} fill="currentColor" />
                         </div>
                         <p className="video-caption">Watch our contributor deep-dive (Placeholder)</p>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );
